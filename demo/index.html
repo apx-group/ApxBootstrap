@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="de" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APX Bootstrap Theme</title>
+    <link rel="icon" href="../assets/apx-logo.svg" type="image/svg+xml" />
+    <link href="../dist/bootstrap-apx.min.css" rel="stylesheet" />
+    <style>
+      .theme-showcase {
+        margin-top: 2rem;
+      }
+      .color-box {
+        height: 60px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+      .bg-primary-demo {
+        background-color: var(--bs-primary);
+        color: #0e0d0a;
+      }
+      .bg-surface-demo {
+        background-color: var(--bs-secondary-bg);
+        color: var(--bs-body-color);
+        border: 1px solid var(--bs-border-color);
+      }
+      .hero {
+        padding: 5rem 0 3rem;
+      }
+      .navbar-brand img {
+        height: 28px;
+        width: 28px;
+        vertical-align: text-bottom;
+        margin-right: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+          <img src="../assets/apx-logo.svg" alt="APX" />APX
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#components">Komponenten</a></li>
+            <li class="nav-item"><a class="nav-link" href="#colors">Farben</a></li>
+            <li class="nav-item ms-lg-3">
+              <button class="btn btn-outline-primary btn-sm" onclick="toggleTheme()">
+                <span id="theme-icon">☀️</span> <span id="theme-label">Light</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="container">
+        <p class="text-eyebrow text-gold mb-2">APX BOOTSTRAP THEME</p>
+        <h1 class="display-3">Dark-first Bootstrap 5<br />mit Gold-Akzent</h1>
+        <p class="lead col-lg-8 mt-3 text-secondary">
+          Ein individuelles Bootstrap-5-Theme im APX-Look: tiefe, fast schwarze
+          Flächen, warmer Gold-Akzent
+          <span class="text-gold">#bea05d</span> und Helvetica&nbsp;Neue
+          Typografie mit versalen Headlines.
+        </p>
+        <div class="mt-4">
+          <a href="#components" class="btn btn-primary me-2">Komponenten ansehen</a>
+          <a
+            href="https://github.com/apx-group/ApxBootstrap"
+            class="btn btn-outline-primary"
+            >GitHub</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="container my-5" id="components">
+      <div class="row" id="colors">
+        <div class="col-md-6">
+          <h3 class="mb-3">Farbpalette</h3>
+          <div class="color-box bg-primary-demo">Primary / Gold — #bea05d</div>
+          <div class="color-box bg-surface-demo">Surface — #15130e</div>
+          <div class="color-box bg-surface-demo" style="background-color: var(--bs-body-bg)">
+            Page Background — #0e0d0a
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h3 class="mb-3">Typografie</h3>
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <p>
+            Fließtext in Helvetica Neue. Das Theme sorgt für konsistente
+            Typografie über alle Elemente hinweg – mit versalen, eng
+            getrackten Display-Headlines.
+          </p>
+          <p><strong>Fetter Text</strong> und <em>kursiver Text</em>.</p>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-12">
+          <h3 class="mb-3">Buttons</h3>
+          <button type="button" class="btn btn-primary me-2 mb-2">Primary</button>
+          <button type="button" class="btn btn-outline-primary me-2 mb-2">Outline Primary</button>
+          <button type="button" class="btn btn-secondary me-2 mb-2">Secondary</button>
+          <button type="button" class="btn btn-success me-2 mb-2">Success</button>
+          <button type="button" class="btn btn-danger mb-2">Danger</button>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <h3 class="mb-3">Formulare</h3>
+          <form>
+            <div class="mb-3">
+              <label for="exampleInput" class="form-label">E-Mail-Adresse</label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInput"
+                placeholder="name@apx-group.de"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleSelect" class="form-label">Auswahl</label>
+              <select class="form-select" id="exampleSelect">
+                <option>Wählen…</option>
+                <option>Option 1</option>
+                <option>Option 2</option>
+              </select>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="flexCheckDefault" checked />
+              <label class="form-check-label" for="flexCheckDefault">Checkbox</label>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h3 class="mb-3">Cards</h3>
+          <div class="card">
+            <div class="card-header">Featured</div>
+            <div class="card-body">
+              <h5 class="card-title">Card-Titel</h5>
+              <p class="card-text">
+                Diese Card zeigt das APX-Theme mit passenden Flächen, Rahmen
+                und Farben.
+              </p>
+              <a href="#" class="btn btn-primary">Weiter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12">
+          <h3 class="mb-3">Alerts &amp; Badges</h3>
+          <div class="alert alert-primary" role="alert">
+            Ein Primary-Alert im APX-Gold.
+          </div>
+          <div class="alert alert-success" role="alert">
+            Ein Success-Alert mit passendem Styling.
+          </div>
+          <span class="badge text-bg-primary">Primary</span>
+          <span class="badge text-bg-secondary">Secondary</span>
+          <span class="badge text-bg-success">Success</span>
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-4 mt-5 border-top">
+      <div class="container text-center">
+        <p class="text-secondary mb-0">
+          &copy; 2026 APX Bootstrap Theme · Built with Bootstrap 5
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function applyTheme(theme) {
+        const html = document.documentElement;
+        html.setAttribute("data-bs-theme", theme);
+        document.getElementById("theme-icon").textContent =
+          theme === "dark" ? "☀️" : "🌙";
+        document.getElementById("theme-label").textContent =
+          theme === "dark" ? "Light" : "Dark";
+        localStorage.setItem("apx-theme", theme);
+      }
+
+      function toggleTheme() {
+        const current =
+          document.documentElement.getAttribute("data-bs-theme") || "dark";
+        applyTheme(current === "dark" ? "light" : "dark");
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        applyTheme(localStorage.getItem("apx-theme") || "dark");
+      });
+    </script>
+  </body>
+</html>

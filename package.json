@@ -1,0 +1,47 @@
+{
+  "name": "@apx/bootstrap-theme",
+  "version": "1.0.0",
+  "description": "APX Bootstrap 5 theme (dark-first, gold accent #bea05d, Helvetica Neue).",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "scss",
+    "assets"
+  ],
+  "style": "dist/bootstrap-apx.css",
+  "scripts": {
+    "clean": "rm -rf dist && mkdir -p dist",
+    "css:compile": "sass --load-path=./node_modules scss/apx_theme.scss dist/bootstrap-apx.css --no-source-map --quiet-deps",
+    "css:minify": "postcss dist/bootstrap-apx.css -o dist/bootstrap-apx.min.css",
+    "assets:copy": "cp assets/apx-logo.svg dist/ 2>/dev/null || true && cp assets/favicon.png dist/ 2>/dev/null || true",
+    "css:hash": "hashmark dist/bootstrap-apx.css 'dist/{name}.{hash}{ext}' --length=8 && hashmark dist/bootstrap-apx.min.css 'dist/{name}.{hash}{ext}' --length=8",
+    "build": "run-s clean css:compile assets:copy css:minify css:hash",
+    "dev": "npm run build && live-server . --port=3000 --open=/demo/index.html",
+    "dev:watch": "npm run build && run-p watch:css serve",
+    "watch:css": "sass --load-path=./node_modules --watch scss/apx_theme.scss:dist/bootstrap-apx.css --no-source-map --quiet-deps",
+    "serve": "live-server . --port=3000 --open=/demo/index.html",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
+    "check": "biome check ."
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead"
+  ],
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.2",
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.1.1",
+    "hashmark": "^5.0.0",
+    "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "sass": "^1.77.0"
+  }
+}

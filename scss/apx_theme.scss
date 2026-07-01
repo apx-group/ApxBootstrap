@@ -1,0 +1,163 @@
+@import "bootstrap/scss/functions";
+
+/* =========================================================================
+   APX Bootstrap Theme
+   Dark-first esports/gaming visual system. Deep near-black surfaces,
+   warm gold accent, uppercase headers, tight tracking on display type.
+   Colors sourced from ApxWebsite design system.
+   ========================================================================= */
+
+/* Tokens */
+$primary: #bea05d; // warm gold accent
+$secondary: #6f6f6f;
+$success: #4caf7d;
+$danger: #d9534f;
+$warning: #cdaf68;
+$info: #6f9bd1;
+
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, system-ui,
+  -apple-system, "Segoe UI", Roboto, sans-serif;
+$font-family-base: $font-family-sans-serif;
+$headings-font-weight: 700;
+$link-color: $primary;
+
+$border-radius: 8px;
+$border-radius-sm: 4px;
+$border-radius-lg: 12px;
+
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/bootstrap";
+
+/* =========================================================================
+   Brand typography — uppercase display headings with tight tracking
+   ========================================================================= */
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+.text-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Gold text helper */
+.text-gold {
+  color: $primary !important;
+}
+
+/* erzwingt dunklen Text für .btn-primary (Gold-Hintergrund) */
+.btn-primary {
+  --bs-btn-color: #0e0d0a;
+  --bs-btn-hover-color: #0e0d0a;
+  --bs-btn-active-color: #0e0d0a;
+  --bs-btn-disabled-color: #0e0d0a;
+}
+
+/* === Light Theme (Standard über :root von Bootstrap) ==================== */
+
+/* === Dark Theme ========================================================= */
+:root[data-bs-theme="dark"] {
+  /* Grundflächen & Text */
+  --bs-body-bg: #0e0d0a; /* Page-Background (near black)  */
+  --bs-body-color: #e8e6df; /* Standard-Text (warm off-white) */
+  --bs-heading-color: #ffffff; /* Überschriften */
+  --bs-border-color: rgba(232, 230, 223, 0.1); /* zarte Rahmenlinien */
+
+  /* Oberflächen (Karten/Paneele/Liste) */
+  --bs-secondary-bg: #15130e; /* Panel-0 (cards, rows, modals) */
+  --bs-tertiary-bg: #1c1810; /* Panel-1 (hover, toasts) */
+
+  /* Marke/Akzent */
+  --bs-primary: #bea05d;
+  --bs-primary-rgb: 190, 160, 93;
+  --bs-link-color: var(--bs-primary);
+  --bs-link-hover-color: #cdaf68; /* accent-light */
+
+  /* Sekundäre Texte */
+  --bs-secondary-color: #9a9898;
+  --bs-tertiary-color: rgba(232, 230, 223, 0.45);
+
+  /* Form Controls */
+  --bs-form-control-bg: rgba(255, 255, 255, 0.04);
+  --bs-form-control-color: var(--bs-body-color);
+  --bs-form-control-border-color: rgba(255, 255, 255, 0.15);
+  --bs-focus-ring-color: rgba(190, 160, 93, 0.35);
+
+  /* Cards */
+  --bs-card-bg: #15130e;
+  --bs-card-border-color: rgba(232, 230, 223, 0.07);
+
+  /* Dropdown/Popover */
+  --bs-popover-bg: #15130e;
+  --bs-dropdown-bg: #15130e;
+}
+
+/* Buttons – dunkler Text auf Gold */
+:root[data-bs-theme="dark"] .btn-primary {
+  --bs-btn-color: #0e0d0a;
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+
+  --bs-btn-hover-color: #0e0d0a;
+  --bs-btn-hover-bg: #cdaf68;
+  --bs-btn-hover-border-color: #cdaf68;
+
+  --bs-btn-active-color: #0e0d0a;
+  --bs-btn-active-bg: #8a7038;
+  --bs-btn-active-border-color: #8a7038;
+
+  --bs-btn-disabled-color: #0e0d0a;
+}
+
+/* Outline-Variante – Gold-Rahmen & -Text, Hover füllt */
+:root[data-bs-theme="dark"] .btn-outline-primary {
+  --bs-btn-color: #bea05d;
+  --bs-btn-border-color: #bea05d;
+
+  --bs-btn-hover-color: #0e0d0a;
+  --bs-btn-hover-bg: #bea05d;
+  --bs-btn-hover-border-color: #bea05d;
+
+  --bs-btn-active-color: #0e0d0a;
+  --bs-btn-active-bg: #cdaf68;
+  --bs-btn-active-border-color: #cdaf68;
+}
+
+/* List-Groups / Nav-Pills */
+:root[data-bs-theme="dark"] .list-group,
+:root[data-bs-theme="dark"] .nav-pills .nav-link {
+  --bs-list-group-bg: #15130e;
+  --bs-list-group-border-color: rgba(232, 230, 223, 0.07);
+}
+:root[data-bs-theme="dark"] .nav-pills .nav-link.active,
+:root[data-bs-theme="dark"] .list-group-item.active {
+  background-color: #1c1810;
+  border-color: #bea05d;
+  box-shadow: inset 0 0 0 1px #bea05d;
+  color: #ffffff;
+}
+
+/* Inputs: Fokus-Ring in Gold */
+:root[data-bs-theme="dark"] .form-control:focus,
+:root[data-bs-theme="dark"] .form-select:focus {
+  border-color: #bea05d;
+  box-shadow: 0 0 0 0.25rem rgba(190, 160, 93, 0.25);
+}
+
+/* Navbar – dunkel mit Gold-Brand */
+:root[data-bs-theme="dark"] .navbar {
+  background-color: rgba(10, 9, 7, 0.92) !important;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(232, 230, 223, 0.07);
+}
+:root[data-bs-theme="dark"] .navbar .navbar-brand {
+  color: #bea05d;
+}
